@@ -1,24 +1,18 @@
 <script setup lang="ts">
 import type {PropType} from "vue";
 
-enum BtnType {
-  WARN = 'warn',
-  SUCCESS = 'success',
-  ERROR = 'error'
-}
-enum BtnGrade {
-  FIRST = 'first',
-  SECOND = 'second',
-  THIRD = 'third'
-}
 const props = defineProps({
   grade:{
-    type:String as PropType<BtnType>,
+    type:String,
     required:true,
   },
   type:{
-    type:String as PropType<BtnGrade>,
+    type:String,
     required:true,
+    validator(value, props) {
+      // The value must match one of these strings
+      return ['success', 'warning', 'error'].includes(value)
+    }
   }
 })
 

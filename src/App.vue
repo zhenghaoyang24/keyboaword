@@ -11,7 +11,7 @@ import ButtonCom from "@/components/ButtonCom.vue";
           w
         </div>
         <div class="navbar-ctrl space-between-x p-box-shadow">
-          <ButtonCom :type="BtnType.SUCCESS" :grade="BtnGrade.THIRD">
+          <ButtonCom :type="success" :grade="first">
             <template #btnValue>
               <SetComIcon></SetComIcon>
             </template>
